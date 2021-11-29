@@ -1,30 +1,26 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app">
+    <router-view></router-view>
+    <min-tab-bar></min-tab-bar>
   </div>
-  <router-view/>
 </template>
+<script>
+  // 导入子组件
+  import MinTabBar from 'components/content/mintabbar/MinTabBar.vue'
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  export default {
+    name: "app",
+    components: {
+      MinTabBar
+    }
+  }
 
-#nav {
-  padding: 30px;
-}
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<style scoped>
+/*引入base.css */
+@import "assets/css/base.css";
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+
 </style>
+
